@@ -6,7 +6,7 @@ use Exporter;
 use base 'Exporter';
 use vars qw( $VERSION @EXPORT @EXPORT_OK );
 
-$VERSION   = 1.0;
+$VERSION   = '1.0';
 @EXPORT    = qw( expand_filename );
 @EXPORT_OK = qw( expand_filename  home_of );
 
@@ -48,6 +48,8 @@ Richard Clamp <richardc@unixbeard.net>
 
 =head1 COPYRIGHT
 
-=head1 SEE ALSO
+Copyright (c) 2003, Richard Clamp. All Rights Reserved.  This module
+is free software. It may be used, redistributed and/or modified under
+the same terms as Perl itself.
 
 =cut
