@@ -38,9 +38,9 @@ File::Path::Expand - expand filenames
 
 =head1 DESCRIPTION
 
-File::Expand expands user directories in filenames.  For the simple
-case it's no more complex than s{^~/}{$HOME/}, but for other cases it
-consults C<getpwent> and does the right thing.
+File::Path::Expand expands user directories in filenames.  For the
+simple case it's no more complex than s{^~/}{$HOME/}, but for other
+cases it consults C<getpwent> and does the right thing.
 
 =head1 AUTHOR
 
