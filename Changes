@@ -1,2 +1,5 @@
+1.01 Sunday 11th May, 2003
+	Bugfix to the test suite - had miscounted the number of skipped tests
+
 1.0 Sunday 11th May, 2003
 	Initial release

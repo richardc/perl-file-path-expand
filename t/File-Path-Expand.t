@@ -8,7 +8,7 @@ $ENV{HOME} = '/some/path';
 is( expand_filename('~/foo'), "/some/path/foo", 'uses $HOME' );
 
 SKIP: {
-    skip "only guaranteed on penfold", 4
+    skip "only guaranteed on penfold", 3
       unless hostname eq 'penfold.unixbeard.net';
 
   SKIP: {

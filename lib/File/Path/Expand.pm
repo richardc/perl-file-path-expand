@@ -6,7 +6,7 @@ use Exporter;
 use base 'Exporter';
 use vars qw( $VERSION @EXPORT @EXPORT_OK );
 
-$VERSION   = '1.0';
+$VERSION   = '1.01';
 @EXPORT    = qw( expand_filename );
 @EXPORT_OK = qw( expand_filename  home_of );
 
