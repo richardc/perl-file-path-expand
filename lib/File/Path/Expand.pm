@@ -1,22 +1,24 @@
 use strict;
 package File::Path::Expand;
-our $VERSION = 1.0;
 use User::pwent;
+use Carp qw(croak);
 use Exporter;
 use base 'Exporter';
-use Carp qw(croak);
-our @EXPORT = qw( expand_filename );
+use vars qw( $VERSION @EXPORT @EXPORT_OK );
+
+$VERSION   = 1.0;
+@EXPORT    = qw( expand_filename );
+@EXPORT_OK = qw( expand_filename  home_of );
 
 sub expand_filename {
     my $path = shift;
-    $path =~ s{^~/}{ $ENV{HOME} ? "$ENV{HOME}/" : _home_of( $> )."/" }e;
-    $path =~ s{^~(.*?)/}{ _home_of( $1 )."/" }e;
+    $path =~ s{^~/}{ $ENV{HOME} ? "$ENV{HOME}/" : home_of( $> )."/" }e;
+    $path =~ s{^~(.*?)/}{ home_of( $1 )."/" }e;
     return $path;
 }
 
-sub _home_of {
+sub home_of {
     my $user = shift;
-    local $Carp::carplevel += 2;
     my $ent = getpw($user)
       or croak "no such user '$user'";
     return $ent->dir;

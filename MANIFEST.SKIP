@@ -1,0 +1,9 @@
+.svn/
+Makefile.PL
+Build
+Makefile
+_build
+blib
+pm_to_blib
+~$
+MANIFEST.SKIP
