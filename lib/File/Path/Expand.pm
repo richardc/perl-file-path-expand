@@ -6,14 +6,14 @@ use Exporter;
 use base 'Exporter';
 use vars qw( $VERSION @EXPORT @EXPORT_OK );
 
-$VERSION   = '1.01';
+$VERSION   = '1.02';
 @EXPORT    = qw( expand_filename );
 @EXPORT_OK = qw( expand_filename  home_of );
 
 sub expand_filename {
     my $path = shift;
-    $path =~ s{^~/}{ $ENV{HOME} ? "$ENV{HOME}/" : home_of( $> )."/" }e;
-    $path =~ s{^~(.*?)/}{ home_of( $1 )."/" }e;
+    $path =~ s{^~(?=/|$)}{ $ENV{HOME} ? "$ENV{HOME}" : home_of( $> ) }e
+      or $path =~ s{^~(.+?)(?=/|$)}{ home_of( $1 ) }e;
     return $path;
 }
 
